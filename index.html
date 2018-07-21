@@ -11,6 +11,23 @@
     <script>
       var gameInstance = UnityLoader.instantiate("gameContainer", "Build/webgltest.json", {onProgress: UnityProgress});
     </script>
+    <script src="https://vk.com/js/api/xd_connection.js?2"  type="text/javascript"></script>
+    <script>
+      var vkInitFunc = function() {
+        window.name = 'fXD';
+        VK.init(function() { 
+          // API initialization succeeded 
+          // Your code here
+          window.alert("vk inited");
+          console.log("vk inited");
+        }, function() { 
+          // API initialization failed 
+          // Can reload page here 
+          window.alert("vk init failed");
+          console.log("vk init failed");
+        }, '5.80');
+      }
+    </script>
   </head>
   <body>
     <div class="webgl-content">
