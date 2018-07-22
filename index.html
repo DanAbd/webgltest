@@ -21,7 +21,11 @@
           window.alert("vk inited");
           console.log("vk inited");
           console.log(window.location.href);
-//           getUser(
+          
+          VK.loadParams(window.location.href);
+          var viewer_id = VK.params.viewer_id;
+          getUser(viewer_id);
+          
         }, function() { 
           // API initialization failed 
           // Can reload page here 
