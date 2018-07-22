@@ -14,19 +14,26 @@
     <script src="https://vk.com/js/api/xd_connection.js?2"  type="text/javascript"></script>
     <script>
       var vkInitFunc = function() {
-        window.name = 'fXD';
+//         window.name = 'fXD';
         VK.init(function() { 
           // API initialization succeeded 
           // Your code here
           window.alert("vk inited");
           console.log("vk inited");
           console.log(window.location.href);
+//           getUser(
         }, function() { 
           // API initialization failed 
           // Can reload page here 
           window.alert("vk init failed");
           console.log("vk init failed");
         }, '5.80');
+        
+        function getUser (uid) {
+          VK.api("users.get", { user_ids:uid, fields:'photo_100' }, function(data) {
+            console.log(data.response);
+          });
+        }
       }
     </script>
   </head>
