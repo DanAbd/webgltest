@@ -39,7 +39,7 @@
         
         function getUser (uid) {
           VK.api("users.get", { user_ids:uid, fields:'photo_100' }, function(data) {
-            console.log(data.response);
+            console.log(data);
           });
         }
       }
