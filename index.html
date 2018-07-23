@@ -40,6 +40,7 @@
         function getUser (uid) {
           VK.api("users.get", { user_ids:uid, fields:'photo_100' }, function(data) {
             var str = JSON.stringify(data);
+            gameInstance.SendMessage("SMVK", "OnVkInited", str);
             console.log(str);
           });
         }
