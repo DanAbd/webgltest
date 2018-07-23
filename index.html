@@ -18,6 +18,9 @@
         VK.init(function() { 
           // API initialization succeeded 
           // Your code here
+          
+          gameInstance.SendMessage("SMVK", "OnVkInited", "vk inited!");
+          
           window.alert("vk inited");
           console.log("vk inited");
           console.log(window.location.href);
