@@ -11,41 +11,6 @@
     <script>
       var gameInstance = UnityLoader.instantiate("gameContainer", "Build/webgltest.json", {onProgress: UnityProgress});
     </script>
-    <script src="https://vk.com/js/api/xd_connection.js?2"  type="text/javascript"></script>
-    <script>
-      var vkInitFunc = function() {
-//         window.name = 'fXD';
-        VK.init(function() { 
-          // API initialization succeeded 
-          // Your code here
-          
-          gameInstance.SendMessage("SMVK", "OnVkInited", "vk inited!");
-          
-          window.alert("vk inited");
-          console.log("vk inited");
-          console.log(window.location.href);
-          
-          VK.loadParams(window.location.href);
-          var viewer_id = VK.params.viewer_id;
-          console.log(viewer_id);
-          getUser(viewer_id);
-          
-        }, function() { 
-          // API initialization failed 
-          // Can reload page here 
-          window.alert("vk init failed");
-          console.log("vk init failed");
-        }, '5.80');
-        
-        function getUser (uid) {
-          VK.api("users.get", { user_ids:uid, fields:'photo_100' }, function(data) {
-            var str = JSON.stringify(data);
-            gameInstance.SendMessage("SMVK", "OnVkInited", str);
-            console.log(str);
-          });
-        }
-      }
-    </script>
   </head>
   <body>
     <div class="webgl-content">
