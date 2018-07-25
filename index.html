@@ -11,8 +11,9 @@
     <script src="Build/UnityLoader.js"></script>
     <script>
       var gameInstance = UnityLoader.instantiate("gameContainer", "Build/webgltest.json", {onProgress: UnityProgress});
-      VK.addCallback("onWindowResized", function() {
+      VK.addCallback("onWindowResized", function(width,height) {
         console.log(arguments);
+        console.log(width,height);
       });
     </script>
   </head>
