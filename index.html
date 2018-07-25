@@ -11,6 +11,7 @@
     <script src="Build/UnityLoader.js"></script>
     <script>
       var gameInstance = UnityLoader.instantiate("gameContainer", "Build/webgltest.json", {onProgress: UnityProgress});
+      VK.callMethod("showRequestBox", "405607501", "Hello!", "myRequestKey");
     </script>
   </head>
   <body>
