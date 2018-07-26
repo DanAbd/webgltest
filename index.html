@@ -11,11 +11,11 @@
     <script src="Build/UnityLoader.js"></script>
     <script>
       var gameInstance = UnityLoader.instantiate("gameContainer", "Build/webgltest.json", {onProgress: UnityProgress});
-      VK.addCallback("onWindowResized", function(width,height) {
-        console.log("onWindowResized");
-      });
       VK.addCallback("onRequestCancel", function() {
-        VK.callMethod("resizeWindow", 500, 500);
+        
+        VK.api("users.get", {user_ids:VK.params.viewer_id, fields:'photo_100'}, function(data) {
+          console.log(data);
+        });
       });
       console.log(window.location.href);
     </script>
