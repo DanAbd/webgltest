@@ -10,17 +10,7 @@
     <script src="TemplateData/UnityProgress.js"></script>  
     <script src="Build/UnityLoader.js"></script>
     <script>
-      //var gameInstance = UnityLoader.instantiate("gameContainer", "Build/webgltest.json", {onProgress: UnityProgress});
-      
-      VK.init(function() {
-        console.log ('inited');
-        VK.loadParams(window.location.href);
-        VK.api("users.get", {user_ids:VK.params.viewer_id, fields:'photo_100'}, function(data) {
-          console.log(data);
-        });
-		}, function() {
-        console.log ('init failed');
-		}, '5.80');
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/webgltest.json", {onProgress: UnityProgress});
     </script>
   </head>
   <body>
